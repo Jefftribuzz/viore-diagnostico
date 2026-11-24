@@ -298,7 +298,7 @@ quedaMao:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwg
 const CFG={
   versao:"v2",                              // aparece na planilha (coluna Etapa) e nos eventos do pixel
   whatsapp:"5531982349191",                 // WhatsApp da clínica
-  waTopText:"Olá, vim pelo Diagnóstico Capilar e quero mais informações sobre a consulta com a Dra. Maria Rita.",
+  waTopText:"Oi, vim pelo Diagnóstico Capilar e quero mais informações sobre a consulta com a Dra. Maria Rita.",
   pixelId:"1277203023450412",                             // ID do Pixel da Meta
   leadsWebhook:"https://script.google.com/macros/s/AKfycbwdadYib1H-m49F6lF5u68bh3hf7BNs__ro0alCFuw7oOk9bQwuCNYFiMvAdmaH075SkQ/exec",                          // link do Google Apps Script para salvar os leads na planilha
   resultadosUrl:"https://dramariaritarocha.com.br/",
@@ -772,7 +772,7 @@ function result(){
 function summary(keys,level,escala){
   const get=id=>{const q=Q.find(x=>x.id===id);return q&&answered(q)?chosen(q).map(o=>g(o[0]).split(":")[0]).join(", "):""};
   const nivel={baixa:"baixo",moderada:"atenção",alta:"alto"}[level];
-  const l=[`Olá! Sou ${nome.trim()} e fiz o diagnóstico capilar online. Meu nível de alerta foi ${nivel.toUpperCase()} (${sinais()} sinais).`];
+  const l=[`Oi! Sou ${nome.trim()} e fiz o diagnóstico capilar online. Meu nível de alerta foi ${nivel.toUpperCase()} (${sinais()} sinais).`];
   const qx=get("queixa"), tp=get("tempo");
   if(qx) l.push(`Queixa principal: ${qx}${tp?` (${tp.toLowerCase()})`:""}.`);
   if(keys.length) l.push(`O diagnóstico apontou: ${keys.map(k=>PERFIS[k].replace(/^Sinais (sugestivos de |de |que )?/,"")).join("; ")}.`);
